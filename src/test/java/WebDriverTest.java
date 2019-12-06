@@ -16,6 +16,7 @@ public class WebDriverTest {
         getDriver().manage().deleteAllCookies();
         getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+        TestContext.initialize();
     }
 
     @Test
