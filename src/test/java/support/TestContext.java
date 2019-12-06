@@ -45,13 +45,9 @@ public class TestContext {
         return new Yaml().load(stream);
     }
 
-
-
     public static Map<String, String> getCustomer() {
         return getData("customer");
     }
-
-
 
     public static JavascriptExecutor getExecutor() {
         return (JavascriptExecutor) driver;
