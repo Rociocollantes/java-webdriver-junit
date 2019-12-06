@@ -1,7 +1,9 @@
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import support.TestContext;
-
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +20,7 @@ public class WebDriverTest {
     }
 
     @Before
-    public void before(){
+    public void before() {
         getDriver().manage().deleteAllCookies();
     }
 
