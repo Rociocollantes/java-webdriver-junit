@@ -25,7 +25,7 @@ public class WebDriverTest {
     }
 
     @Test
-    public void verifyTitle() {
+    public  void verifyTitle() {
         getDriver().get("https://skryabin.com/market/quote.html");
         String actualTitle = getDriver().getTitle();
         assertThat(actualTitle).isEqualTo("Get a Quote");
@@ -53,5 +53,4 @@ public class WebDriverTest {
     public static void teardown() {
         getDriver().quit();
     }
-
 }
