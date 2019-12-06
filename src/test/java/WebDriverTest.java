@@ -10,8 +10,8 @@ import static support.TestContext.getDriver;
 
 public class WebDriverTest {
 
-    @Before
-    public void setup() {
+    @BeforeClass
+    public static void setup() {
         TestContext.initialize();
         getDriver().manage().deleteAllCookies();
         getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -23,6 +23,10 @@ public class WebDriverTest {
         getDriver().get("https://skryabin.com/market/quote.html");
         String actualTitle = getDriver().getTitle();
         assertThat(actualTitle).isEqualTo("Get a Quote");
+    }
+    @Before
+    public void before(){
+        getDriver().manage().deleteAllCookies();
     }
 
     @Test
@@ -43,8 +47,8 @@ public class WebDriverTest {
         assertThat(actualDocuments).contains("Document 2");
     }
 
-    @After
-    public void teardown() {
+    @AfterClass
+    public static void teardown() {
         getDriver().quit();
     }
 
