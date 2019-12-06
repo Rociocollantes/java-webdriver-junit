@@ -1,7 +1,9 @@
-import org.junit.*;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
 import org.openqa.selenium.By;
 import support.TestContext;
-
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -10,12 +12,16 @@ import static support.TestContext.getDriver;
 
 public class WebDriverTest {
 
-    @Before
-    public void setup() {
+    @BeforeClass
+    public static void setup() {
         TestContext.initialize();
-        getDriver().manage().deleteAllCookies();
         getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+    @Before
+    public void before() {
+        getDriver().manage().deleteAllCookies();
     }
 
     @Test
@@ -43,8 +49,8 @@ public class WebDriverTest {
         assertThat(actualDocuments).contains("Document 2");
     }
 
-    @After
-    public void teardown() {
+    @AfterClass
+    public static void teardown() {
         getDriver().quit();
     }
 
