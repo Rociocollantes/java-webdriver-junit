@@ -30,10 +30,6 @@ public class WebDriverTest {
         String actualTitle = getDriver().getTitle();
         assertThat(actualTitle).isEqualTo("Get a Quote");
     }
-    @Before
-    public void before(){
-        getDriver().manage().deleteAllCookies();
-    }
 
     @Test
     public void verifyNewWindow() {
