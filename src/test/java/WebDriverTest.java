@@ -13,7 +13,7 @@ import static support.TestContext.getDriver;
 public class WebDriverTest {
 
     @BeforeClass
-    public void setup() {
+    public static void setup() {
         TestContext.initialize();
         getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
