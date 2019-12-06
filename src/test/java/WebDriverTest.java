@@ -25,10 +25,14 @@ public class WebDriverTest {
     }
 
     @Test
-    public void verifyTitle() {
+    public  void verifyTitle() {
         getDriver().get("https://skryabin.com/market/quote.html");
         String actualTitle = getDriver().getTitle();
         assertThat(actualTitle).isEqualTo("Get a Quote");
+    }
+    @Before
+    public void before(){
+        getDriver().manage().deleteAllCookies();
     }
 
     @Test
@@ -53,5 +57,4 @@ public class WebDriverTest {
     public static void teardown() {
         getDriver().quit();
     }
-
 }
