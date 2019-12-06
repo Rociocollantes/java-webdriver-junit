@@ -17,6 +17,8 @@ public class WebDriverTest {
         getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         TestContext.initialize();
+       // TestContext.initialize();
+
     }
 
     @Test
@@ -24,6 +26,7 @@ public class WebDriverTest {
         getDriver().get("https://skryabin.com/market/quote.html");
         String actualTitle = getDriver().getTitle();
         assertThat(actualTitle).isEqualTo("Get a Quote");
+       // assertThat(actualTitle).isEqualTo("Get a Quote");
     }
 
     @Test
