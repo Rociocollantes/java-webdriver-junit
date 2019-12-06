@@ -38,6 +38,9 @@ public class QuoteTest {
         newWindows.removeAll(oldWindows);
         // switch on only one left window handle from new set
         getDriver().switchTo().window(newWindows.iterator().next());
+
+        String actualDocuments = getDriver().findElement(By.xpath("//ul")).getText();
+        assertThat(actualDocuments).contains("Document 2");
     }
 
     @AfterClass
