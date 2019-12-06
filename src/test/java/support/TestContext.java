@@ -107,8 +107,8 @@ public class TestContext {
                     geckoDriverName = "geckodriver";
                 }
                 System.setProperty("webdriver.gecko.driver", getDriversDirPath() + geckoDriverName);
-                System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
-                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE,"/dev/null");
+                System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE, "true");
+                System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, "/dev/null");
                 FirefoxProfile firefoxProfile = new FirefoxProfile();
                 firefoxProfile.setPreference("xpinstall.signatures.required", false);
                 firefoxProfile.setPreference("app.update.enabled", false);
@@ -165,4 +165,7 @@ public class TestContext {
         return System.getProperty("user.dir") + String.format("%1$ssrc%1$stest%1$sresources%1$sdownloads%1$s", File.separator);
     }
 
+    private static String getDriversDirPath1() {
+        return System.getProperty("user.dir") + String.format("%1$ssrc%1$stest%1$sresources%1$sdrivers%1$s", File.separator);
+    }
 }
