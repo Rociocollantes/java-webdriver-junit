@@ -10,8 +10,8 @@ import static support.TestContext.getDriver;
 
 public class QuoteTest {
 
-    @BeforeClass
-    public static void setup() {
+    @Before
+    public void setup() {
         TestContext.initialize();
         getDriver().manage().deleteAllCookies();
         getDriver().manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
@@ -43,8 +43,8 @@ public class QuoteTest {
         assertThat(actualDocuments).contains("Document 2");
     }
 
-    @AfterClass
-    public static void teardown() {
+    @After
+    public void teardown() {
         getDriver().quit();
     }
 
