@@ -1,4 +1,8 @@
+ chien
 import org.junit.After;
+
+import org.junit.AfterClass;
+master
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -20,12 +24,16 @@ public class WebDriverTest {
     }
 
     @Before
+chien
     public void before(){
+
+    public void before() {
+ master
         getDriver().manage().deleteAllCookies();
     }
 
     @Test
-    public void verifyTitle() {
+    public  void verifyTitle() {
         getDriver().get("https://skryabin.com/market/quote.html");
         String actualTitle = getDriver().getTitle();
         assertThat(actualTitle).isEqualTo("Get a Quote");
@@ -49,9 +57,8 @@ public class WebDriverTest {
         assertThat(actualDocuments).contains("Document 2");
     }
 
-    @After
-    public void teardown() {
+    @AfterClass
+    public static void teardown() {
         getDriver().quit();
     }
-
 }
