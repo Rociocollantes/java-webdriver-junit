@@ -97,7 +97,7 @@ public class TestContext {
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--start-maximized");
                 chromeOptions.setExperimentalOption("prefs", chromePreferences);
-//                chromeOptions.addExtensions(new File(System.getProperty("user.dir")+ "/src/test/resources/extensions/ChroPath.crx"));
+                chromeOptions.addExtensions(new File(System.getProperty("user.dir")+ "/src/test/resources/extensions/ChroPath.crx"));
                 if (isHeadless) {
                     chromeOptions.setHeadless(true);
                     chromeOptions.addArguments("--window-size=1920,1080");
