@@ -1,8 +1,7 @@
- chien
+
 import org.junit.After;
 
 import org.junit.AfterClass;
-master
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -24,11 +23,7 @@ public class WebDriverTest {
     }
 
     @Before
-chien
     public void before(){
-
-    public void before() {
- master
         getDriver().manage().deleteAllCookies();
     }
 
